@@ -1,598 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MiniTwit</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-<div class="app">
-
-    <!-- LOGIN -->
-    <section id="login" class="screen auth active">
+  <body>
+    <div class="app">
+      <!-- LOGIN -->
+      <section id="login" class="screen auth active">
         <div class="auth-box">
+          <div class="logo">♥</div>
 
-            <div class="logo">♥</div>
+          <h1>MiniTwit</h1>
+          <p class="tagline">Connect. Share. Discover.</p>
 
-            <h1>MiniTwit</h1>
-            <p class="tagline">Connect. Share. Discover.</p>
+          <input
+            id="loginUsername"
+            type="text"
+            placeholder="Username or email"
+          />
 
-            <input id="loginUsername"
-                   type="text"
-                   placeholder="Username or email">
+          <input id="loginPassword" type="password" placeholder="Password" />
 
-            <input id="loginPassword"
-                   type="password"
-                   placeholder="Password">
+          <button id="loginBtn" class="primary-btn">Login</button>
 
-            <button id="loginBtn" class="primary-btn">
-                Login
-            </button>
+          <p class="or">or</p>
 
-            <p class="or">or</p>
-
-            <button id="signupBtn" class="secondary-btn">
-                Create account
-            </button>
-
+          <button id="signupBtn" class="secondary-btn">Create account</button>
         </div>
-    </section>
+      </section>
 
-
-    <!-- REGISTER -->
-    <section id="signup" class="screen auth">
-
+      <!-- REGISTER -->
+      <section id="signup" class="screen auth">
         <div class="auth-box">
+          <button id="signupBack" class="back-btn">←</button>
 
-            <button id="signupBack" class="back-btn">←</button>
+          <div class="logo">♥</div>
 
-            <div class="logo">♥</div>
+          <h1>Create account</h1>
 
-            <h1>Create account</h1>
+          <input id="signupName" type="text" placeholder="Full name" />
 
-            <input id="signupName"
-                   type="text"
-                   placeholder="Full name">
+          <input id="signupUsername" type="text" placeholder="Username" />
 
-            <input id="signupUsername"
-                   type="text"
-                   placeholder="Username">
+          <input id="signupPassword" type="password" placeholder="Password" />
 
-            <input id="signupPassword"
-                   type="password"
-                   placeholder="Password">
-
-            <button id="registerBtn" class="primary-btn">
-                Register
-            </button>
-
+          <button id="registerBtn" class="primary-btn">Register</button>
         </div>
-    </section>
+      </section>
 
-
-    <!-- HOME -->
-    <section id="home" class="screen">
-
+      <!-- HOME -->
+      <section id="home" class="screen">
         <header class="top-header">
+          <button id="homeProfile" class="icon-btn">👤</button>
 
-            <button id="homeProfile" class="icon-btn">
-                👤
-            </button>
+          <h2>MiniTwit</h2>
 
-            <h2>MiniTwit</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div class="top-tabs">
+          <button class="top-tab active">For you</button>
 
-            <button class="top-tab active">
-                For you
-            </button>
-
-            <button class="top-tab">
-                Following
-            </button>
-
+          <button class="top-tab">Following</button>
         </div>
-
 
         <div class="compose">
+          <div class="avatar" id="homeAvatar">S</div>
 
-            <div class="avatar" id="homeAvatar">
-                S
+          <div class="compose-content">
+            <textarea
+              id="postText"
+              placeholder="What is happening?!"
+            ></textarea>
+
+            <div class="compose-bottom">
+              <span>🖼️</span>
+              <span>😊</span>
+
+              <button id="postBtn" class="post-btn">Post</button>
             </div>
-
-            <div class="compose-content">
-
-                <textarea id="postText"
-                          placeholder="What is happening?!"></textarea>
-
-                <div class="compose-bottom">
-
-                    <span>🖼️</span>
-                    <span>😊</span>
-
-                    <button id="postBtn" class="post-btn">
-                        Post
-                    </button>
-
-                </div>
-
-            </div>
+          </div>
         </div>
-
 
         <div id="feed"></div>
+      </section>
 
-    </section>
-
-
-    <!-- EXPLORE -->
-    <section id="explore" class="screen">
-
+      <!-- EXPLORE -->
+      <section id="explore" class="screen">
         <header class="page-header">
+          <button id="exploreBack" class="icon-btn">←</button>
 
-            <button id="exploreBack" class="icon-btn">
-                ←
-            </button>
+          <h2>Explore</h2>
 
-            <h2>Explore</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div class="search-box">
+          🔍
 
-            🔍
-
-            <input id="searchInput"
-                   type="text"
-                   placeholder="Search MiniTwit">
-
+          <input id="searchInput" type="text" placeholder="Search MiniTwit" />
         </div>
-
 
         <div class="explore-section">
+          <h3>What's happening</h3>
 
-            <h3>What's happening</h3>
+          <div class="trend">
+            <small>Trending</small>
+            <b>#Technology</b>
+            <span>25.4K posts</span>
+          </div>
 
-            <div class="trend">
-                <small>Trending</small>
-                <b>#Technology</b>
-                <span>25.4K posts</span>
-            </div>
+          <div class="trend">
+            <small>Trending</small>
+            <b>#StudentLife</b>
+            <span>18.2K posts</span>
+          </div>
 
-            <div class="trend">
-                <small>Trending</small>
-                <b>#StudentLife</b>
-                <span>18.2K posts</span>
-            </div>
-
-            <div class="trend">
-                <small>Trending</small>
-                <b>#Coding</b>
-                <span>12.8K posts</span>
-            </div>
-
+          <div class="trend">
+            <small>Trending</small>
+            <b>#Coding</b>
+            <span>12.8K posts</span>
+          </div>
         </div>
-
 
         <div class="explore-section">
+          <h3>Who to follow</h3>
 
-            <h3>Who to follow</h3>
-
-            <div id="suggestions"></div>
-
+          <div id="suggestions"></div>
         </div>
+      </section>
 
-    </section>
-
-
-    <!-- NOTIFICATIONS -->
-    <section id="notifications" class="screen">
-
+      <!-- NOTIFICATIONS -->
+      <section id="notifications" class="screen">
         <header class="page-header">
+          <button id="notificationBack" class="icon-btn">←</button>
 
-            <button id="notificationBack" class="icon-btn">
-                ←
-            </button>
+          <h2>Notifications</h2>
 
-            <h2>Notifications</h2>
-
-            <button id="notificationProfile" class="icon-btn">
-                👤
-            </button>
-
+          <button id="notificationProfile" class="icon-btn">👤</button>
         </header>
-
 
         <div id="notificationLike" class="notification">
+          <div class="notification-icon">❤️</div>
 
-            <div class="notification-icon">❤️</div>
-
-            <div>
-                <b>Rahul</b> liked your post.
-                <small>2m</small>
-            </div>
-
+          <div>
+            <b>Rahul</b> liked your post.
+            <small>2m</small>
+          </div>
         </div>
-
 
         <div id="notificationFollow" class="notification">
+          <div class="notification-icon">👤</div>
 
-            <div class="notification-icon">👤</div>
-
-            <div>
-                <b>Meera</b> followed you.
-                <small>10m</small>
-            </div>
-
+          <div>
+            <b>Kishore Baalaji</b> followed you.
+            <small>10m</small>
+          </div>
         </div>
-
 
         <div class="notification">
+          <div class="notification-icon">💬</div>
 
-            <div class="notification-icon">💬</div>
-
-            <div>
-                <b>Kalish</b> commented on your post.
-                <small>30m</small>
-            </div>
-
+          <div>
+            <b>Kalish</b> commented on your post.
+            <small>30m</small>
+          </div>
         </div>
+      </section>
 
-    </section>
-
-
-    <!-- MESSAGES -->
-    <section id="messages" class="screen">
-
+      <!-- MESSAGES -->
+      <section id="messages" class="screen">
         <header class="page-header">
+          <button id="messageBack" class="icon-btn">←</button>
 
-            <button id="messageBack" class="icon-btn">
-                ←
-            </button>
+          <h2>Messages</h2>
 
-            <h2>Messages</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div id="messageList"></div>
+      </section>
 
-    </section>
-
-
-    <!-- CHAT -->
-    <section id="chat" class="screen">
-
+      <!-- CHAT -->
+      <section id="chat" class="screen">
         <header class="page-header">
+          <button id="chatBack" class="icon-btn">←</button>
 
-            <button id="chatBack" class="icon-btn">
-                ←
-            </button>
+          <h2 id="chatTitle">Chat</h2>
 
-            <h2 id="chatTitle">Chat</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
 
-
-        <div id="chatMessages"
-             class="chat-messages">
-        </div>
-
+        <div id="chatMessages" class="chat-messages"></div>
 
         <div class="chat-input-box">
+          <input id="chatInput" type="text" placeholder="Write a message..." />
 
-            <input id="chatInput"
-                   type="text"
-                   placeholder="Write a message...">
-
-            <button id="sendMessage">
-                ➤
-            </button>
-
+          <button id="sendMessage">➤</button>
         </div>
+      </section>
 
-    </section>
-
-
-    <!-- PROFILE -->
-    <section id="profile" class="screen">
-
+      <!-- PROFILE -->
+      <section id="profile" class="screen">
         <header class="page-header">
+          <button id="profileBack" class="icon-btn">←</button>
 
-            <button id="profileBack" class="icon-btn">
-                ←
-            </button>
+          <h2>Profile</h2>
 
-            <h2>Profile</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div class="profile-cover"></div>
 
-
         <div class="profile-info">
+          <div class="large-avatar" id="profileAvatar">S</div>
 
-            <div class="large-avatar"
-                 id="profileAvatar">
-                S
-            </div>
+          <button id="editProfileBtn" class="edit-profile-btn">
+            Edit profile
+          </button>
 
+          <h2 id="profileName">Shalini</h2>
 
-            <button id="editProfileBtn"
-                    class="edit-profile-btn">
-                Edit profile
+          <p id="profileUsername">@kanmani</p>
+
+          <p id="profileBio">Student • Developer • Learner 💙</p>
+
+          <div class="profile-follow-info">
+            <button id="followingBtn">
+              <b id="followingCount">3</b>
+
+              Following
             </button>
 
+            <button id="followersBtn">
+              <b id="followersCount">4</b>
 
-            <h2 id="profileName">
-                Shalini
-            </h2>
-
-
-            <p id="profileUsername">
-                @shalini
-            </p>
-
-
-            <p id="profileBio">
-                Student • Developer • Learner 💙
-            </p>
-
-
-            <div class="profile-follow-info">
-
-                <button id="followingBtn">
-
-                    <b id="followingCount">3</b>
-
-                    Following
-
-                </button>
-
-
-                <button id="followersBtn">
-
-                    <b id="followersCount">4</b>
-
-                    Followers
-
-                </button>
-
-            </div>
-
+              Followers
+            </button>
+          </div>
         </div>
-
 
         <div class="profile-tabs">
+          <button class="profile-tab active" data-tab="posts">Posts</button>
 
-            <button class="profile-tab active"
-                    data-tab="posts">
-                Posts
-            </button>
+          <button class="profile-tab" data-tab="replies">Replies</button>
 
-            <button class="profile-tab"
-                    data-tab="replies">
-                Replies
-            </button>
+          <button class="profile-tab" data-tab="media">Media</button>
 
-            <button class="profile-tab"
-                    data-tab="media">
-                Media
-            </button>
-
-            <button class="profile-tab"
-                    data-tab="likes">
-                Likes
-            </button>
-
+          <button class="profile-tab" data-tab="likes">Likes</button>
         </div>
 
-
         <div id="profilePosts"></div>
+      </section>
 
-    </section>
-
-
-    <!-- COMMENTS -->
-    <section id="comments" class="screen">
-
+      <!-- COMMENTS -->
+      <section id="comments" class="screen">
         <header class="page-header">
+          <button id="commentsBack" class="icon-btn">←</button>
 
-            <button id="commentsBack"
-                    class="icon-btn">
-                ←
-            </button>
+          <h2>Comments</h2>
 
-            <h2>Comments</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div id="selectedPost"></div>
 
-
         <div class="comment-box">
+          <div class="avatar" id="commentAvatar">S</div>
 
-            <div class="avatar"
-                 id="commentAvatar">
-                S
-            </div>
+          <input id="commentInput" type="text" placeholder="Post your reply" />
 
-            <input id="commentInput"
-                   type="text"
-                   placeholder="Post your reply">
-
-            <button id="commentBtn"
-                    class="reply-btn">
-                Reply
-            </button>
-
+          <button id="commentBtn" class="reply-btn">Reply</button>
         </div>
 
-
-        <h3 class="comments-title">
-            Replies
-        </h3>
-
+        <h3 class="comments-title">Replies</h3>
 
         <div id="commentsList"></div>
+      </section>
 
-    </section>
-
-
-    <!-- FOLLOWERS -->
-    <section id="followers" class="screen">
-
+      <!-- FOLLOWERS -->
+      <section id="followers" class="screen">
         <header class="page-header">
+          <button id="followersBack" class="icon-btn">←</button>
 
-            <button id="followersBack"
-                    class="icon-btn">
-                ←
-            </button>
+          <h2>Followers</h2>
 
-            <h2>Followers</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div id="followersList"></div>
+      </section>
 
-    </section>
-
-
-    <!-- FOLLOWING -->
-    <section id="following" class="screen">
-
+      <!-- FOLLOWING -->
+      <section id="following" class="screen">
         <header class="page-header">
+          <button id="followingBack" class="icon-btn">←</button>
 
-            <button id="followingBack"
-                    class="icon-btn">
-                ←
-            </button>
+          <h2>Following</h2>
 
-            <h2>Following</h2>
-
-            <div></div>
-
+          <div></div>
         </header>
-
 
         <div id="followingList"></div>
+      </section>
 
-    </section>
-
-
-    <!-- EDIT PROFILE -->
-    <section id="editProfile" class="screen">
-
+      <!-- EDIT PROFILE -->
+      <section id="editProfile" class="screen">
         <header class="page-header">
+          <button id="editCancel" class="icon-btn">←</button>
 
-            <button id="editCancel"
-                    class="icon-btn">
-                ←
-            </button>
+          <h2>Edit profile</h2>
 
-            <h2>Edit profile</h2>
-
-            <button id="saveProfile"
-                    class="save-btn">
-                Save
-            </button>
-
+          <button id="saveProfile" class="save-btn">Save</button>
         </header>
 
-
         <div class="edit-profile-form">
+          <div class="large-avatar" id="editAvatar">S</div>
 
-            <div class="large-avatar"
-                 id="editAvatar">
-                S
-            </div>
+          <label>Name</label>
 
+          <input id="editName" type="text" />
 
-            <label>Name</label>
+          <label>Username</label>
 
-            <input id="editName"
-                   type="text">
+          <input id="editUsername" type="text" />
 
+          <label>Bio</label>
 
-            <label>Username</label>
-
-            <input id="editUsername"
-                   type="text">
-
-
-            <label>Bio</label>
-
-            <textarea id="editBio"></textarea>
-
+          <textarea id="editBio"></textarea>
         </div>
+      </section>
 
-    </section>
-
-
-    <!-- BOTTOM NAV -->
-    <nav id="bottomNav"
-         class="bottom-nav">
-
+      <!-- BOTTOM NAV -->
+      <nav id="bottomNav" class="bottom-nav">
         <button id="navHome">
-            🏠
-            <span>Home</span>
+          🏠
+          <span>Home</span>
         </button>
 
         <button id="navExplore">
-            🔍
-            <span>Explore</span>
+          🔍
+          <span>Explore</span>
         </button>
 
         <button id="navNotifications">
-            🔔
-            <span>Notifications</span>
+          🔔
+          <span>Notifications</span>
         </button>
 
         <button id="navMessages">
-            ✉️
-            <span>Messages</span>
+          ✉️
+          <span>Messages</span>
         </button>
 
         <button id="navProfile">
-            👤
-            <span>Profile</span>
+          👤
+          <span>Profile</span>
         </button>
+      </nav>
 
-    </nav>
+      <button id="floatingPost" class="floating-post">+</button>
+    </div>
 
-
-    <button id="floatingPost"
-            class="floating-post">
-        +
-    </button>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
